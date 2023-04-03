@@ -26,4 +26,10 @@ public class Book {
         this.title = title;
     }
 
+//    override method for printing the console message
+    @Override
+    public String toString() {
+        return "Book{" + "isbn='" + isbn + '\'' + ", title='" + title + '\'' + '}';
+    }
+
 }
