@@ -10,4 +10,15 @@ public class BookRepositoryImpl implements BookRepository {
         return new Book(isbn,"Sample Book");
     }
 
+//    simulating some latency(network service or just some issue & in our case slow delay)
+//    and calling it in the method implementation
+    private void simulateSlowService() {
+        try {
+            long time = 3000L;
+            Thread.sleep(time);
+        } catch (InterruptedException e) {
+            throw new IllegalStateException(e);
+        }
+    }
+
 }
