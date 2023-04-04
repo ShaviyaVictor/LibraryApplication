@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class BookRepositoryImpl implements BookRepository {
 
+    // Add the @Cachable annotation to cache the data to the books cache named 'books'
     @Override
     @Cacheable("books")
     public Book getByIsbn(String isbn) {
