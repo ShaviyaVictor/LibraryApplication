@@ -16,6 +16,10 @@ public class cacheConfiguration {
         @Override
         public void customize(ConcurrentMapCacheManager cacheManager) {
 
+            cacheManager.setAllowNullValues(false);
+            cacheManager.setStoreByValue(true);
+            System.out.println("CacheManager Customization is Invoked!");
+
         }
     }
 
