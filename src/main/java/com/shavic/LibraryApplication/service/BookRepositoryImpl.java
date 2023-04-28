@@ -12,7 +12,7 @@ public class BookRepositoryImpl implements BookRepository {
     @Override
     @Cacheable("books")
     public Book getByIsbn(String isbn) {
-//        deliberately insert a 3-sec delay into each method call
+//        a method that deliberately inserts a 3-sec delay into each method call
         simulateSlowService();
         return new Book(isbn,"Sample Book");
     }
