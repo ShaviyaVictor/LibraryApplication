@@ -18,7 +18,7 @@ public class CachingBookRepositoryImpl implements BookRepository {
     }
 
     private void simulateSlowService() {
-        try{
+        try {
             long time = 3000L;
             Thread.sleep(time);
         } catch (InterruptedException e) {
