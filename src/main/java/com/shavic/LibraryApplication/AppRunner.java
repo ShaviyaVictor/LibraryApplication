@@ -25,7 +25,7 @@ public class AppRunner implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-//        arguments to be printed on the terminal
+        //  arguments to be printed on the terminal
         logger.info("...Fetching books");
         logger.info("isbn-1234 -->" + bookRepository.getByIsbn("isbn-1234"));
         logger.info("isbn-5678 -->" + bookRepository.getByIsbn("isbn-5678"));
