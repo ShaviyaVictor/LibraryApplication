@@ -2,8 +2,8 @@ package com.shavic.LibraryApplication.service;
 
 import com.shavic.LibraryApplication.model.Book;
 import com.shavic.LibraryApplication.repository.BookRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 public class CachingBookRepositoryImpl implements BookRepository {
 
     @Override
+    @Cacheable("Books")
     public Book getByIsbn(String isbn) {
         simulateSlowService();
         return new Book(isbn, "The New Book In Town!");
