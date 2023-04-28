@@ -3,6 +3,8 @@ package com.shavic.LibraryApplication;
 import com.shavic.LibraryApplication.repository.BookRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -14,8 +16,9 @@ public class AppRunner implements CommandLineRunner {
     public static final Logger logger = LoggerFactory.getLogger(AppRunner.class);
     private final BookRepository bookRepository;
 
-
-    public AppRunner(BookRepository bookRepository) {
+    @Autowired // injecting the necessary service to the main class calling the repository being implemented
+    //    Below we are using the @Qualifier annotation to call the service bean that we expect to be called in this running class
+    public AppRunner(@Qualifier("2ndRepositoryImpl") BookRepository bookRepository) {
         this.bookRepository = bookRepository;
     }
 
