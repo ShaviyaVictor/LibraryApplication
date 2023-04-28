@@ -2,10 +2,12 @@ package com.shavic.LibraryApplication.service;
 
 import com.shavic.LibraryApplication.model.Book;
 import com.shavic.LibraryApplication.repository.BookRepository;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 @Service
+@Qualifier("1stRepositoryImpl")
 public class BookRepositoryImpl implements BookRepository {
 
     // Add the @Cachable annotation to cache the data to the books cache named 'books'

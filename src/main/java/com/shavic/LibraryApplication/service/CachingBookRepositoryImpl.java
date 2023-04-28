@@ -2,9 +2,12 @@ package com.shavic.LibraryApplication.service;
 
 import com.shavic.LibraryApplication.model.Book;
 import com.shavic.LibraryApplication.repository.BookRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 @Service
+@Qualifier("2ndRepositoryImpl")
 public class CachingBookRepositoryImpl implements BookRepository {
 
     @Override
